@@ -1,6 +1,6 @@
 import type React from "react";
-import Brand from "@/app/ui/layouts/dashboard/header/brand";
-import Navigation from "@/app/ui/layouts/dashboard/header/navigation";
+import Brand from "@/app/ui/layouts/dashboard/navbar/brand";
+import Navigation from "@/app/ui/layouts/dashboard/navbar/navigation";
 
 interface Props {
   children: React.ReactNode;

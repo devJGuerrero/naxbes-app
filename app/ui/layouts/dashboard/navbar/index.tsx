@@ -1,5 +1,5 @@
 import type React from "react";
-import Header from "@/app/ui/layouts/dashboard/header";
+import Header from "@/app/ui/layouts/dashboard/navbar/header";
 
 const Navbar: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
       <Header.Navigation />
     </Header>
   );
-}
+};
 
 Navbar.displayName = "Navbar";
 

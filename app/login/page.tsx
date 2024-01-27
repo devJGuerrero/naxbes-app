@@ -1,6 +1,6 @@
 import type React from "react";
-import LoginForm from "@/app/ui/components/login/login-form";
 import Field from "@/app/ui/components/form/field";
+import { LoginForm } from "@/app/ui/components";
 
 const LoginPage: React.FC = () => {
   return (

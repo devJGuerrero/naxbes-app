@@ -1,7 +1,7 @@
 import type React from "react";
 import { findMany } from "@/prisma/entities/user";
 
-export default async function Users(): Promise<React.JSX.Element> {
+const Users: React.FC = async () => {
   const users = await findMany();
   return (
     <>
@@ -10,3 +10,5 @@ export default async function Users(): Promise<React.JSX.Element> {
     </>
   );
 }
+
+export default Users;

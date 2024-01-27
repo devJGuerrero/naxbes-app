@@ -1,7 +1,7 @@
-import Item from "@/app/ui/layouts/dashboard/header/menu-item";
 import type React from "react";
-import Action from "@/app/ui/layouts/dashboard/header/menu-action";
-import Wrapper from "@/app/ui/layouts/dashboard/header/menu-wrapper";
+import Item from "@/app/ui/layouts/dashboard/navbar/menu-item";
+import Action from "@/app/ui/layouts/dashboard/navbar/menu-action";
+import Wrapper from "@/app/ui/layouts/dashboard/navbar/menu-wrapper";
 
 interface Props {
   children: React.ReactNode;

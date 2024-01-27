@@ -1,5 +1,7 @@
 import type React from "react";
 
-export default async function Dashboard(): Promise<React.JSX.Element> {
+const Dashboard: React.FC = () => {
   return <p>Dashboard</p>;
 }
+
+export default Dashboard;

@@ -1,8 +1,13 @@
 "use server";
-
-import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
+import { signIn, signOut } from "@/auth";
 
+/**
+ * Action: Request to authenticate a user
+ * @param prevState string | undefined
+ * @param formData FormData
+ * @returns Promise<"Invalid credentials." | "Something went wrong." | undefined>
+ */
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData
@@ -22,6 +27,10 @@ export async function authenticate(
   }
 }
 
+/**
+ * Action: Request to close a user's session
+ * @param payload FormData
+ */
 export async function signOutSession(payload: FormData): Promise<void> {
   await signOut();
 }

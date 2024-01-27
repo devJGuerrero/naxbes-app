@@ -1,5 +1,5 @@
 import type React from "react";
-import Wrapper from "@/app/ui/layouts/dashboard/wrapper";
+import Layout from "@/app/ui/layouts/dashboard/layout";
 
 interface Props {
   children: React.ReactNode;
@@ -7,10 +7,10 @@ interface Props {
 
 const DashboardLayout: React.FC<Props> = ({ children }) => {
   return (
-    <Wrapper>
-      <Wrapper.Navbar />
-      <Wrapper.Content>{children}</Wrapper.Content>
-    </Wrapper>
+    <Layout>
+      <Layout.Navbar />
+      <Layout.Wrapper>{children}</Layout.Wrapper>
+    </Layout>
   );
 };
 

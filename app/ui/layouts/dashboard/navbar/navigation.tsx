@@ -1,6 +1,6 @@
-import Icon from "@/app/ui/icon";
-import Menu from "@/app/ui/layouts/dashboard/header/menu";
 import type React from "react";
+import Icon from "@/app/ui/icon";
+import Menu from "@/app/ui/layouts/dashboard/navbar/menu";
 
 const Navigation: React.FC = () => {
   return (

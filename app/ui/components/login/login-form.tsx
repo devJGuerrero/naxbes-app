@@ -1,6 +1,6 @@
 "use client";
 import type React from "react";
-import Form from "@/app/ui/components/form/form";
+import { Form } from "@/app/ui/components";
 import { useFormState } from "react-dom";
 import { authenticate } from "@/app/lib/actions/authenticate";
 
