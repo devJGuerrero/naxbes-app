@@ -1,33 +1,42 @@
-import { z } from "zod";
-import bcrypt from "bcrypt";
 import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import { type User } from "@prisma/client";
-import { authConfig } from "./auth.config";
-import { findByEmail } from "./prisma/entities/user";
+import Google from "next-auth/providers/google";
+import { PrismaClient } from "@prisma/client";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import type { NextAuthConfig } from "next-auth";
 
-export const { auth, signIn, signOut } = NextAuth({
-  ...authConfig,
+const prisma = new PrismaClient()
+
+export const config = {
+  pages: {
+    signIn: "/login"
+  },
+  theme: {
+    brandColor: "#336df1",
+    logo: "https://next-auth.js.org/img/logo/logo-sm.png",
+  },
+  adapter: PrismaAdapter(prisma),
+  session: {
+    strategy: "jwt",
+  },
   providers: [
-    Credentials({
-      // @ts-expect-error: Unreachable code error
-      async authorize(credentials): Promise<User | null> {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
-          .safeParse(credentials);
-        if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await findByEmail(email);
-          if (user == null) {
-            return null
-          };
-          const passwordMatch = await bcrypt.compare(password, user.password);
-          if (passwordMatch) {
-            return user;
-          }
-        }
-        return null;
+    Google({
+      allowDangerousEmailAccountLinking: true
+    }),
+  ],
+  callbacks: {
+    authorized({ auth, request: { nextUrl } }) {
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      const isLoggedIn = !!auth?.user;
+      const isOnDashboard = nextUrl.pathname.startsWith("/dashboard");
+      if (isOnDashboard) {
+        if (isLoggedIn) return true;
+        return false;
+      } else if (isLoggedIn) {
+        return Response.redirect(new URL("/dashboard", nextUrl));
       }
-    })
-  ]
-});
+      return false;
+    }
+  },
+} satisfies NextAuthConfig
+
+export const { handlers, auth, signIn, signOut } = NextAuth(config)

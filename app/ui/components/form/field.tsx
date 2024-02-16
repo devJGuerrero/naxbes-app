@@ -9,7 +9,9 @@ interface Props {
 }
 
 const Field: React.FC<Props> = ({ children, className }) => {
-  return <div className={`flex flex-col ${className ?? ""}`}>{children}</div>;
+  return (
+    <div className={`flex flex-col gap-1 ${className ?? ""}`}>{children}</div>
+  );
 };
 
 Field.displayName = "Field";
