@@ -8,7 +8,7 @@ interface Props {
 
 const Label: React.FC<Props> = ({ children, className, htmlForm }) => {
   return (
-    <label className={className ?? ""} htmlFor={htmlForm}>
+    <label className={`font-medium ${className ?? ""}`} htmlFor={htmlForm}>
       {children}
     </label>
   );

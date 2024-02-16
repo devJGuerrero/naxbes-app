@@ -5,17 +5,19 @@ interface Props {
   name: string;
   className?: string;
   type?: React.HTMLInputTypeAttribute;
+  value?: string | number | readonly string[] | undefined;
 }
 
-const Input: React.FC<Props> = ({ children, name, type, className }) => {
+const Input: React.FC<Props> = ({ children, name, type, className, value }) => {
   return (
     <input
-      className={`p-1 border-2 border-gray-200 w-full rounded-sm outline-none ${
+      className={`py-2 px-3 border-[1px] border-stone-100  bg-stone-50 w-full rounded-md outline-none shadow-sm ${
         className ?? ""
       }`}
       id={name}
       name={name}
       type={type ?? "text"}
+      defaultValue={value}
     >
       {children}
     </input>
