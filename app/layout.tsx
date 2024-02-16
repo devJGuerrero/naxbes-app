@@ -16,7 +16,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-100`}>{children}</body>
+      <body className={`${inter.className}`}>{children}</body>
     </html>
   );
 }

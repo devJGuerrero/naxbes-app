@@ -1,22 +1,20 @@
 import type React from "react";
-import Field from "@/app/ui/components/form/field";
-import { LoginForm } from "@/app/ui/components";
+import Link from "next/link";
+import { Main, LoginForm, Flex } from "@/app/ui/components";
 
 const LoginPage: React.FC = () => {
   return (
-    <LoginForm>
-      <Field>
-        <Field.Label htmlForm="email">Email</Field.Label>
-        <Field.Input name="email" />
-      </Field>
-      <Field>
-        <Field.Label htmlForm="password">Password</Field.Label>
-        <Field.Input name="password" type="password" />
-      </Field>
-      <Field>
-        <Field.Submit name="signin">Sign In</Field.Submit>
-      </Field>
-    </LoginForm>
+    <Main>
+      <Flex className="flex gap-3 justify-end pt-5 pr-16">
+        <p>Dont have an account?</p>
+        <Link href="/login" className="font-medium text-blue-700">
+          Sign up
+        </Link>
+      </Flex>
+      <Flex className="flex justify-center mt-10">
+        <LoginForm />
+      </Flex>
+    </Main>
   );
 };
 

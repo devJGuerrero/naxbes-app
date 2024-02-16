@@ -9,9 +9,10 @@ interface Props {
 const Submit: React.FC<Props> = ({ children, name, className }) => {
   return (
     <button
-      className={`p-1 border-2 border-gray-200 w-full rounded-sm outline-none ${
-        className ?? ""
-      }`}
+      className={
+        className ??
+        `p-2 w-full bg-blue-700 text-white hover:bg-blue-600 rounded-md outline-none`
+      }
       id={name}
       name={name}
       type="submit"
