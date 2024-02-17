@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Submit from "../form/submit";
 import type React from "react";
