@@ -1,11 +1,19 @@
-import Form from "@/app/ui/components/form/form";
-import Flex from "@/app/ui/components/flexbox/flex";
+import Flex from "@/app/ui/components/tags/flex";
 import Main from "@/app/ui/components/tags/main";
-import Field from "@/app/ui/components/form/field";
-import LoginForm from "@/app/ui/components/login/login-form";
+import Form from "@/app/ui/components/tags/form/form";
+import Field from "@/app/ui/components/tags/form/field";
+import Typography from "@/app/ui/components/tags/typography";
+import FormAction from "@/app/ui/components/tags/form/form-action";
 import ButtonSignGoogle from "@/app/ui/components/tags/button-sign-google";
 import ButtonSignFacebook from "@/app/ui/components/tags/button-sign-facebook";
 
 export {
-  Flex, Main, Form, Field, LoginForm, ButtonSignGoogle, ButtonSignFacebook
+  Flex,
+  Form,
+  Main,
+  Field,
+  Typography,
+  FormAction,
+  ButtonSignGoogle,
+  ButtonSignFacebook,
 }

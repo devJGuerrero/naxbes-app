@@ -1,7 +1,7 @@
 import type React from "react";
-import Label from "@/app/ui/components/form/label";
-import Input from "@/app/ui/components/form/input";
-import Submit from "@/app/ui/components/form/submit";
+import Label from "@/app/ui/components/tags/form/label";
+import Input from "@/app/ui/components/tags/form/input";
+import Submit from "@/app/ui/components/tags/form/submit";
 
 interface Props {
   children?: React.ReactNode;

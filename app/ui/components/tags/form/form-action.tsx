@@ -6,12 +6,12 @@ interface Props {
   action: (payload: FormData) => void;
 }
 
-const Form: React.FC<Props> = ({ children, className, action }) => {
+const FormAction: React.FC<Props> = ({ children, action, className }) => {
   return (
-    <form className={className ?? ""} action={action}>
+    <form action={action} className={className ?? ""}>
       {children}
     </form>
   );
 };
 
-export default Form;
+export default FormAction;
