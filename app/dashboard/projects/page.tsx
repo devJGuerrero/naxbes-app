@@ -1,9 +1,8 @@
 import type React from "react";
+import { Typography } from "@/app/ui/components";
 
 const Projects: React.FC = () => {
-  return (
-    <h1>Projects page</h1>
-  );
-}
+  return <Typography.Emphasis1>Projects page</Typography.Emphasis1>;
+};
 
 export default Projects;
