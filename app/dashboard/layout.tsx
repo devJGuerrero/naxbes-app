@@ -1,5 +1,5 @@
 import type React from "react";
-import Layout from "@/app/ui/layouts/dashboard/layout";
+import Layout from "@/app/ui/layouts/dashboard";
 
 interface Props {
   children: React.ReactNode;

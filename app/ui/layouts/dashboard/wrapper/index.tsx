@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Wrapper: React.FC<Props> = ({ children }) => {
-  return <div className="pt-12 px-36">{children}</div>;
+  return <div className="pt-12 px-44">{children}</div>;
 };
 
 Wrapper.displayName = "Wrapper";
