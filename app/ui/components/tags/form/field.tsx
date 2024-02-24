@@ -1,4 +1,5 @@
 import type React from "react";
+import { Layer } from "@/app/ui/components";
 import Label from "@/app/ui/components/tags/form/label";
 import Input from "@/app/ui/components/tags/form/input";
 import Submit from "@/app/ui/components/tags/form/submit";
@@ -10,7 +11,9 @@ interface Props {
 
 const Field: React.FC<Props> = ({ children, className }) => {
   return (
-    <div className={`flex flex-col gap-1 ${className ?? ""}`}>{children}</div>
+    <Layer className={`flex flex-col gap-1 ${className ?? ""}`}>
+      {children}
+    </Layer>
   );
 };
 

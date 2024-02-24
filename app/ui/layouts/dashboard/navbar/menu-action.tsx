@@ -1,4 +1,5 @@
 import type React from "react";
+import { Layer } from "@/app/ui/components";
 import Item from "@/app/ui/layouts/dashboard/navbar/menu-action-item";
 import ItemSignOut from "@/app/ui/layouts/dashboard/navbar/menu-action-item-sign-out";
 
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const MenuAction: React.FC<Props> = ({ children }) => {
-  return <div className="self-center flex gap-2">{children}</div>;
+  return <Layer className="self-center flex gap-2">{children}</Layer>;
 };
 
 MenuAction.displayName = "MenuAction";

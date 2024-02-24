@@ -1,6 +1,8 @@
 "use client";
+
 import type React from "react";
 import { getCsrfToken } from "next-auth/react";
+import { Form, Field, Button } from "@/app/ui/components";
 
 interface Props {
   children?: React.ReactNode;
@@ -8,16 +10,19 @@ interface Props {
 
 const MenuActionItemSignOut: React.FC<Props> = async ({ children }) => {
   return (
-    <form method="post" action="/api/auth/signout">
-      <input
+    <Form method="post" action="/api/auth/signout">
+      <Field.Input
         name="csrfToken"
         type="hidden"
-        defaultValue={await getCsrfToken()}
+        value={await getCsrfToken()}
       />
-      <button className="font-medium rounded-md p-2 hover:cursor-pointer active:bg-indigo-800/15 text-slate-700">
+      <Button
+        className="font-medium rounded-md p-2 hover:cursor-pointer active:bg-gray-100 text-slate-700"
+        type="submit"
+      >
         {children ?? null}
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };
 

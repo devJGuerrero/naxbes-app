@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type React from "react";
-import { Typography } from "@/app/ui/components";
+import { Paragraph } from "@/app/ui/components";
 
 const BrandCaption: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const BrandCaption: React.FC = () => {
       href="/dashboard"
       className="self-center text-lg font-bold text-slate-800"
     >
-      <Typography.Emphasis1>naxbes</Typography.Emphasis1>
+      <Paragraph>naxbes</Paragraph>
     </Link>
   );
 };

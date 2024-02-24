@@ -1,12 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import type React from "react";
+import { Layer } from "@/app/ui/components";
 import FacebookImage from "@/public/Facebook.png";
 
-const ButtonSignFacebook: React.FC = () => {
+const FacebookSignButton: React.FC = () => {
   return (
     <Link href="/login">
-      <div className="flex justify-center gap-2 mt-5 p-2 border-[1px] border-stone-100 hover:text-white hover:bg-blue-600 shadow-sm rounded-md outline-none">
+      <Layer className="flex justify-center gap-2 mt-5 p-2 border-[1px] border-stone-100 hover:text-white hover:bg-blue-600 shadow-sm rounded-md outline-none">
         <Image
           priority
           src={FacebookImage}
@@ -16,9 +17,9 @@ const ButtonSignFacebook: React.FC = () => {
           style={{ height: "26px", width: "26px" }}
         />
         Sign in with Facebook
-      </div>
+      </Layer>
     </Link>
   );
 };
 
-export default ButtonSignFacebook;
+export default FacebookSignButton;

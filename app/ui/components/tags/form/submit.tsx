@@ -1,24 +1,26 @@
 import type React from "react";
+import { Button } from "@/app/ui/components";
 
 interface Props {
   children?: React.ReactNode;
-  name: string;
+  id?: string | undefined;
+  name?: string | undefined;
   className?: string;
 }
 
-const Submit: React.FC<Props> = ({ children, name, className }) => {
+const Submit: React.FC<Props> = ({ children, id, name, className }) => {
   return (
-    <button
+    <Button
       className={
         className ??
-        `p-2 w-full bg-blue-700 text-white hover:bg-blue-600 rounded-md outline-none`
+        `p-2 w-full font-bold bg-cerise-red-600 text-white hover:bg-cerise-red-700 rounded-md outline-none`
       }
-      id={name}
+      id={id}
       name={name}
       type="submit"
     >
       {children}
-    </button>
+    </Button>
   );
 };
 

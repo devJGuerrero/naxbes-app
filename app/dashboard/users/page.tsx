@@ -1,18 +1,16 @@
 import type React from "react";
 import Google from "@/public/Google.png";
 import Facebook from "@/public/Facebook.png";
-import { Flex, Typography, SocialAccount } from "@/app/ui/components";
+import { Layer, Paragraph, SocialAccount } from "@/app/ui/components";
 
 const Users: React.FC = async () => {
   return (
-    <Flex className="gap-5">
-      <Flex className="w-1/5 p-10 rounded-md">
-        <Typography.Paragraph className="font-bold">Users</Typography.Paragraph>
-      </Flex>
-      <Flex className="flex-col gap-5 grow p-10 rounded-md bg-white">
-        <Typography.Paragraph className="font-bold">
-          Associated accounts
-        </Typography.Paragraph>
+    <Layer className="flex gap-5">
+      <Layer className="w-1/5 p-14 rounded-md">
+        <Paragraph className="font-bold">Users</Paragraph>
+      </Layer>
+      <Layer className="flex flex-col gap-5 grow p-14 rounded-md bg-white shadow-sm">
+        <Paragraph className="font-bold">Associated accounts</Paragraph>
         <SocialAccount
           socialImage={Facebook}
           socilName="Facebook"
@@ -23,8 +21,8 @@ const Users: React.FC = async () => {
           socilName="Google"
           device="Mobile"
         />
-      </Flex>
-    </Flex>
+      </Layer>
+    </Layer>
   );
 };
 
